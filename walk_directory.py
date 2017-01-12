@@ -2,7 +2,7 @@
 
 import os
 
-def FileContentReplace(directory,origin,replace):
+def ReplaceFileContent(directory,origin,replace):
 	"对directory中所有文件就地替换指定的内容"
 	assert os.path.isdir(directory)
 	results = []
@@ -19,7 +19,7 @@ def FileContentReplace(directory,origin,replace):
 			f.write(line.replace(origin,replace))    
 		f.close()
 
-def FileDelete(directory,tag):
+def DeleteFile(directory,tag):
 	"删除directory中以tag开头的文件"
 	assert os.path.isdir(directory)
 	results = []
@@ -33,4 +33,4 @@ def FileDelete(directory,tag):
 			os.remove(each_file)
 
 if __name__ == "__main__":
-	FileDelete("D:/T639_HR","17011008")
+	DeleteFile("D:/T639_HR","17011008")
